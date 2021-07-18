@@ -1,0 +1,15 @@
+{
+	"name": "tampermonkey-script-template",
+	"version": "1.0.0",
+	"description": "tampermonkey-webpack-template",
+	"scripts": {
+		"build": "tm build",
+		"dev": "tm serve"
+	},
+	"author": "oooonly",
+	"license": "ISC",
+	"devDependencies": {
+		"tampermonkey-cli": "file:../cli",
+		"typescript": "^4.3.5"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"name": "tampermonkey-cli",
+	"version": "1.0.0",
+	"description": "tampermonkey-webpack-template",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc"
+	},
+	"bin": {
+		"tm": "/dist/bin/index.js"
+	},
+	"keywords": [
+		"tampermonkey",
+		"webpack"
+	],
+	"author": "oooonly",
+	"license": "ISC",
+	"dependencies": {
+		"@types/tampermonkey": "^4.0.2",
+		"@types/webpack": "^5.28.0",
+		"@types/webpack-dev-server": "^3.11.5",
+		"chalk": "^4.1.1",
+		"clean-webpack-plugin": "^4.0.0-alpha.0",
+		"commander": "^8.0.0",
+		"ts-loader": "^9.2.3",
+		"ts-node": "^10.1.0",
+		"typescript": "^4.3.5",
+		"webpack": "^5.45.1",
+		"webpack-cli": "^4.7.2",
+		"webpack-dev-server": "^3.11.2",
+		"webpack-userscript": "^2.5.8"
+	},
+	"devDependencies": {
+		"@types/node": "^16.3.3"
+	}
+}

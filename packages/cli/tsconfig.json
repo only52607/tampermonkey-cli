@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "lib": [
+      "ES2020",
+    ],
+    "allowJs": true, 
+    "declaration": true,  
+    "declarationMap": true,           
+    "sourceMap": true,                  
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true ,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["dist", "node_modules"]
+}

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "strict": true,
+        "downlevelIteration": true,
+        "lib": [ "dom", "es5", "es2015.promise" ,"es2015", "es2017", "es2020"],
+    }
+}
