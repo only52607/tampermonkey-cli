@@ -1,20 +1,30 @@
-import { red, green, blue } from "chalk"
-import { buildCompiler } from "../util/compiler-builder"
+import { red, blue, green } from "chalk"
+import { ConfigModules, getUserScriptCompiler, compileConfig } from "../util/compiler-builder"
 
-export const build = () => {
-    console.log(blue("Start building userscript."))
-    const compiler = buildCompiler(process.cwd())
-    compiler.run((_err, stats) => {
-        let failed = false
-        if (stats?.hasErrors()) {
-            console.log(stats.toString({
-                colors: true,
-              }))
-              failed = true
-            console.log(red("Build failed."))
-        }
-        compiler.close(()=>{
-            if (!failed) console.log(green("Build successfully."))
-        });
+async function compileUserScript(configModules: ConfigModules | undefined) {
+    const compiler = getUserScriptCompiler(configModules)
+    return new Promise<void>((resolve, reject) => {
+        compiler.run((_err, stats) => {
+            if (stats?.hasErrors()) {
+                reject(stats)
+            } else {
+                resolve()
+            }
+        })
     })
+}
+
+export const build = async () => {
+    console.log(blue("Start building userscript."))
+    try {
+        console.log(blue("Compiling config."))
+        const compiledConfig = await compileConfig()
+        console.log(blue("Compiling userscript."))
+        await compileUserScript(compiledConfig)
+        console.log(green("Build successfully."))
+    } catch (stats) {
+        console.log(stats.toString({colors: true}))
+        console.log(red("Build failed."))
+        return
+    }
 }

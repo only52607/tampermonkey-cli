@@ -7,25 +7,27 @@ import { serve } from '../command/serve';
 const program = new Command();
 
 program
-  .version(`tampermonkey-cli ${require('../package').version}`)
+  .version(`tampermonkey-cli ${require('../../package').version}`)
   .usage('<command> [options]')
 
 program.command("build")
     .description("build userscript for tamper monkey")
-    .action(()=>{
+    .action(() => {
         build()
     })
 
 program.command("create")
     .description("create tampermonkey userscript project")
-    .action(()=>{
+    .action(() => {
         create()
     })
 
 program.command("serve")
     .description("serve tampermonkey userscript")
-    .action(()=>{
-        serve()
+    .option('-h, --host <type>', 'set the specified host', '127.0.0.1')
+    .option('-p, --port <type>', 'set the specified port', '8080')
+    .action((options, command) => {
+        serve(options.host, parseInt(options.port))
     })
 
 program.parse(process.argv)

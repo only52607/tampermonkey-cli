@@ -3,13 +3,15 @@
     "target": "ES5",
     "module": "CommonJS",
     "lib": [
-      "ES2020",
+      "dom",
+      "ES2020"
     ],
     "allowJs": true, 
     "declaration": true,  
     "declarationMap": true,           
     "sourceMap": true,                  
-    "rootDir": "./",
+    "rootDir": "./src",
+    "baseUrl": "./src",
     "outDir": "./dist",
     "strict": true ,
     "moduleResolution": "Node",
@@ -22,6 +24,6 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", 
+    "tests/**/*.tsx"
   ]
 }

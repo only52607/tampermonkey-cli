@@ -1,15 +1,18 @@
 {
 	"name": "tampermonkey-script-template",
 	"version": "1.0.0",
-	"description": "tampermonkey-webpack-template",
+	"description": "This is a simple tampermonkey userscript template",
 	"scripts": {
 		"build": "tm build",
-		"dev": "tm serve"
+		"serve": "tm serve"
 	},
 	"author": "oooonly",
 	"license": "ISC",
 	"devDependencies": {
 		"tampermonkey-cli": "file:../cli",
 		"typescript": "^4.3.5"
+	},
+	"dependencies": {
+		"@types/node": "^16.3.3"
 	}
 }

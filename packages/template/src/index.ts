@@ -1,1 +1,3 @@
-console.log('hello ok');
+import { hello } from "./utils";
+
+hello()
