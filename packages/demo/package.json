@@ -9,6 +9,7 @@
 	"author": "oooonly",
 	"license": "ISC",
 	"devDependencies": {
+		"@types/tampermonkey": "^4.0.2",
 		"tampermonkey-cli": "file:../cli",
 		"typescript": "^4.3.5"
 	},

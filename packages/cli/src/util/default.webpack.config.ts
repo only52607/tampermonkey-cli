@@ -1,4 +1,4 @@
-import { Configuration, webpack } from 'webpack';
+import { Configuration } from 'webpack';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { join, resolve } from 'path';
 import WebpackUserscript from 'webpack-userscript'

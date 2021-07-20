@@ -1,0 +1,19 @@
+{
+	"name": "<%= dirName %>",
+	"version": "<%= version %>",
+	"description": "<%= description %>",
+	"scripts": {
+		"build": "tm build -i",
+		"serve": "tm serve"
+	},
+	"author": "<%= author %>",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/tampermonkey": "^4.0.2",
+		"tampermonkey-cli": "^<%= cliVersion %>",
+		"typescript": "^4.3.5",
+		"@types/node": "^16.3.3"
+	},
+	"dependencies": {
+	}
+}

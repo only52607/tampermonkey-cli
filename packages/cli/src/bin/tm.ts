@@ -12,22 +12,23 @@ program
 
 program.command("build")
     .description("build userscript for tamper monkey")
-    .action(() => {
-        build()
+    .option("-i", "--install", false)
+    .action(async (options) => {
+        await build(options.install as boolean)
     })
 
-program.command("create")
+program.command("create <dirName>")
     .description("create tampermonkey userscript project")
-    .action(() => {
-        create()
+    .action(async (dirName: string) => {
+        await create(dirName)
     })
 
 program.command("serve")
     .description("serve tampermonkey userscript")
     .option('-h, --host <type>', 'set the specified host', '127.0.0.1')
     .option('-p, --port <type>', 'set the specified port', '8080')
-    .action((options, command) => {
-        serve(options.host, parseInt(options.port))
+    .action(async (options, command) => {
+        await serve(options.host, parseInt(options.port))
     })
 
 program.parse(process.argv)
